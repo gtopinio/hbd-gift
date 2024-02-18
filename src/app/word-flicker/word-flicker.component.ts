@@ -14,9 +14,6 @@ export class WordFlickerComponent implements OnInit {
     'Magpakabait ka na, ha?',
     'Libre naman dyan 😆',
     'Jk, stay safe and healthy!',
-    'Enjoyin mo lang tong gift ko!',
-    'Took me one afternoon to make this 😁',
-    'Pindot ka or swipe para may confetti!',
     'See you sa PBB house natin 😆'
 
   ];

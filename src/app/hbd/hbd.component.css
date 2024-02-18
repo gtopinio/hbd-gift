@@ -6,7 +6,7 @@
 }
 
 .bdayMsg {
-  @apply text-7xl max-md:text-4xl font-happy-monkey font-bold text-center;
+  @apply text-7xl max-md:text-3xl font-happy-monkey font-bold text-center;
 }
 
 .wordFlicker {
