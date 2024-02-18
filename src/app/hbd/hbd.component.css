@@ -14,7 +14,7 @@
 }
 
 .homeBtn {
-  @apply cursor-pointer z-20 mt-16 mr-5 text-6xl absolute right-0 hover:scale-125 transition duration-700 ease-in-out;
+  @apply cursor-pointer z-20 mt-16 mr-5 text-4xl absolute right-0 hover:scale-125 transition duration-700 ease-in-out;
 }
 
 .tooltip {
