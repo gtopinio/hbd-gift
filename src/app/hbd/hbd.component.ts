@@ -1,5 +1,5 @@
 import {Component, Renderer2, ElementRef, HostListener, AfterViewInit, ViewChild} from '@angular/core';
-
+import * as confetti from 'canvas-confetti';
 @Component({
   selector: 'app-hbd',
   templateUrl: './hbd.component.html',
@@ -14,9 +14,11 @@ export class HbdComponent implements AfterViewInit {
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngAfterViewInit() {
-    // No need to assign this.overlay.nativeElement to this.overlay
+    this.showFireworks();
+    setInterval(() => {
+      this.showFireworks();
+   }, 2000);
   }
-
   @HostListener('document:mousedown', ['$event'])
   onMouseDown(event: MouseEvent) {
     if (this.overlay.nativeElement.style.opacity !== '0') {
@@ -86,5 +88,24 @@ export class HbdComponent implements AfterViewInit {
     }
 
     requestAnimationFrame(animateConfetti);
+  }
+
+  showFireworks() {
+    // Create a new canvas element
+    const canvas = this.renderer.createElement('canvas');
+    this.renderer.appendChild(this.el.nativeElement, canvas);
+
+    // Set the canvas to fill its parent
+    this.renderer.setStyle(canvas, 'position', 'absolute');
+    this.renderer.setStyle(canvas, 'top', '0');
+    this.renderer.setStyle(canvas, 'left', '0');
+    this.renderer.setStyle(canvas, 'width', '100%');
+    this.renderer.setStyle(canvas, 'height', '100%');
+
+    // Use the canvas-confetti library to create confetti on this canvas
+    confetti.create(canvas, {
+      resize: true,
+      useWorker: true,
+    })({ particleCount: 200, spread: 200 });
   }
 }
