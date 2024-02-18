@@ -1,7 +1,7 @@
 <!-- Main Component -->
 <section class="app-body">
   <div class="letter-image">
-    <div class="hover-text mailHeader"></div>
+    <div class="hover-text mailHeader">{{mailHeader}}</div>
     <div class="animated-mail">
       <div class="back-fold"></div>
       <div class="letter">
@@ -18,7 +18,7 @@
     </div>
     <div class="shadow"></div>
   </div>
-  <footer class="mailFooter">
+  <footer class="mailFooter" [innerHTML]="mailFooter">
   </footer>
   <div>
     <span class="opacity-0">

@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'arizonia': ["'Arizonia'", 'cursive'],
+        'lovers-quarrel': ["'Lovers Quarrel'", 'cursive'],
+        'pangolin': ["'Pangolin'"],
+      }
+    },
   },
   plugins: [],
 }

@@ -33,7 +33,7 @@
 }
 
 .letter::before {
-  content: '❤'; /* heart icon */
+  content: '🎂'; /* cake icon */
   position: absolute;
   top: 50%; /* center the heart vertically */
   left: 50%; /* center the heart horizontally */
@@ -115,21 +115,21 @@
 .animated-mail .letter .letter-border {
   height: 10px;
   width: 100%;
-  background: repeating-linear-gradient(-45deg, #cb5a5e, #cb5a5e 8px, transparent 8px, transparent 18px);
+  background: repeating-linear-gradient(-45deg, #fdb734, #fdb734 8px, transparent 8px, transparent 18px);
 }
 .animated-mail .letter .letter-title {
   margin-top: 10px;
   margin-left: 5px;
   height: 10px;
   width: 40%;
-  background: #cb5a5e;
+  background: #fdb734;
 }
 .animated-mail .letter .letter-context {
   margin-top: 10px;
   margin-left: 5px;
   height: 10px;
   width: 20%;
-  background: #cb5a5e;
+  background: #fdb734;
 }
 .animated-mail .letter .letter-stamp {
   margin-top: 30px;
@@ -137,7 +137,7 @@
   border-radius: 100%;
   height: 30px;
   width: 30px;
-  background: #cb5a5e;
+  background: #fdb734;
   opacity: 0.3;
 }
 

@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
-
+  mailHeader = "Happy Birthday, Chloe!";
+  mailFooter = "To the black sheep who dared to stand out."
 }

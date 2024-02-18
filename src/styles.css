@@ -1,7 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Lovers+Quarrel&family=Pangolin&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   @apply bg-gradient-to-r from-teal-400 to-yellow-200;
+}
+
+.mailHeader {
+  @apply font-arizonia text-8xl text-center max-md:text-6xl;
+}
+
+.mailFooter {
+  @apply absolute w-[25rem] mt-[32rem] flex items-center justify-center text-center left-1/2 transform -translate-x-1/2 font-pangolin text-3xl hover:scale-105 transition duration-700 ease-in-out select-none;
+}
+
+.hover-text {
+  @apply -mt-[13rem] w-[45rem] max-md:w-[20rem];
+}
+
+.messageContainer {
+  @apply revealUp bg-amber-50/10 rounded-full p-10 mx-2 select-none hover:scale-105 transition duration-700;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.revealUp {
+  animation: revealUp 0.5s ease-out forwards;
 }
