@@ -1,5 +1,32 @@
 <!-- HBD Component -->
 <section class="hbd-body">
-  <div #confettiContainer></div>
+  <div class="flex flex-col items-center justify-center h-full w-full">
+    <div>
+      <h1 class="pb-20">
+        <span class="text-7xl max-md:text-4xl font-happy-monkey font-bold text-center">
+          Happy Birthday, Chloe!
+        </span>
+      </h1>
+      <div class="pt-20 pb-20">
+        <div class="cake">
+          <div class="plate"></div>
+          <div class="layer layer-bottom"></div>
+          <div class="layer layer-middle"></div>
+          <div class="layer layer-top"></div>
+          <div class="icing"></div>
+          <div class="drip drip1"></div>
+          <div class="drip drip2"></div>
+          <div class="drip drip3"></div>
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-20 h-[2.5em] max-md:h-[1.75em] max-md:w-60 max-md:ml-auto max-md:mr-auto">
+        <app-word-flicker></app-word-flicker>
+      </div>
+    </div>
+    <div #confettiWrapper></div>
+  </div>
 </section>
 <!-- End of HBD Component -->

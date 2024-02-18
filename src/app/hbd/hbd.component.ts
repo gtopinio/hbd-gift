@@ -9,7 +9,7 @@ export class HbdComponent implements AfterViewInit {
   // Confetti reference: https://codepen.io/pingwinek_spk/pen/abMzeMw
 
   isMouseDown = false;
-  @ViewChild('confettiContainer', { static: false, read: ElementRef }) overlay!: ElementRef;
+  @ViewChild('confettiWrapper', { static: false, read: ElementRef }) overlay!: ElementRef;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 

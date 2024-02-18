@@ -9,6 +9,7 @@ module.exports = {
         'arizonia': ["'Arizonia'", 'cursive'],
         'lovers-quarrel': ["'Lovers Quarrel'", 'cursive'],
         'pangolin': ["'Pangolin'"],
+        'happy-monkey': ["'Happy Monkey'"],
       }
     },
   },
