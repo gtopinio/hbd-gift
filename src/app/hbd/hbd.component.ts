@@ -1,24 +1,61 @@
-import {Component, Renderer2, ElementRef, HostListener, AfterViewInit, ViewChild} from '@angular/core';
+import {
+  Component,
+  Renderer2,
+  ElementRef,
+  HostListener,
+  AfterViewInit,
+  ViewChild,
+  OnInit,
+  OnDestroy
+} from '@angular/core';
 import * as confetti from 'canvas-confetti';
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-hbd',
   templateUrl: './hbd.component.html',
   styleUrls: ['./hbd.component.css']
 })
-export class HbdComponent implements AfterViewInit {
+export class HbdComponent implements AfterViewInit, OnInit, OnDestroy {
   // Confetti reference: https://codepen.io/pingwinek_spk/pen/abMzeMw
 
   isMouseDown = false;
   @ViewChild('confettiWrapper', { static: false, read: ElementRef }) overlay!: ElementRef;
+  canvas: HTMLCanvasElement | null = null;
+  confettiElements: HTMLDivElement[] = [];
+  fireworksInterval: any;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    private router: Router,
+    ) { }
+
+  ngOnInit() {
+    // Remove existing canvas and confetti elements
+    if (this.canvas) {
+      this.renderer.removeChild(this.el.nativeElement, this.canvas);
+      this.canvas = null;
+    }
+
+    this.confettiElements.forEach(confetti => {
+      this.renderer.removeChild(this.el.nativeElement, confetti);
+    });
+    this.confettiElements = [];
+  }
 
   ngAfterViewInit() {
     this.showFireworks();
-    setInterval(() => {
+    this.fireworksInterval = setInterval(() => {
       this.showFireworks();
-   }, 2000);
+    }, 2000);
   }
+
+  ngOnDestroy() {
+    if (this.fireworksInterval) {
+      clearInterval(this.fireworksInterval);
+    }
+  }
+
   @HostListener('document:mousedown', ['$event'])
   onMouseDown(event: MouseEvent) {
     if (this.overlay.nativeElement.style.opacity !== '0') {
@@ -60,6 +97,7 @@ export class HbdComponent implements AfterViewInit {
     this.renderer.setStyle(confetti, 'top', `${y}px`);
 
     this.renderer.appendChild(this.el.nativeElement, confetti);
+    this.confettiElements.push(confetti);
 
     const angle = Math.random() * Math.PI * 2;
     const velocity = 2 + Math.random() * 2;
@@ -94,6 +132,7 @@ export class HbdComponent implements AfterViewInit {
     // Create a new canvas element
     const canvas = this.renderer.createElement('canvas');
     this.renderer.appendChild(this.el.nativeElement, canvas);
+    this.canvas = canvas;
 
     // Set the canvas to fill its parent
     this.renderer.setStyle(canvas, 'position', 'absolute');
@@ -107,5 +146,9 @@ export class HbdComponent implements AfterViewInit {
       resize: true,
       useWorker: true,
     })({ particleCount: 200, spread: 200 });
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 }

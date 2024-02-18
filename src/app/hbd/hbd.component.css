@@ -5,6 +5,48 @@
   opacity: 0.7;
 }
 
+.bdayMsg {
+  @apply text-7xl max-md:text-4xl font-happy-monkey font-bold text-center;
+}
+
+.wordFlicker {
+  @apply pt-20 h-[2.5em] max-md:h-[1.75em] max-md:w-60 max-md:ml-auto max-md:mr-auto;
+}
+
+.homeBtn {
+  @apply cursor-pointer z-20 mt-16 mr-5 text-6xl absolute right-0 hover:scale-125 transition duration-700 ease-in-out;
+}
+
+.tooltip {
+  @apply text-sm;
+}
+
+.homeBtn .tooltip {
+  visibility: hidden;
+  width: 80px;
+  background-color: rgba(85, 85, 85, 0.5); /* 50% transparency */
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 20%; /* Place the tooltip above the text */
+  left: -25%;
+  margin-left: -60px; /* Use half the width to center the tooltip */
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.homeBtn:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
 .cake {
   position: absolute;
   width: 250px;

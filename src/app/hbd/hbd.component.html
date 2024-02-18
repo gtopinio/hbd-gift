@@ -2,8 +2,8 @@
 <section class="hbd-body">
   <div class="flex flex-col items-center justify-center h-full w-full">
     <div>
-      <h1 class="pb-20">
-        <span class="text-7xl max-md:text-4xl font-happy-monkey font-bold text-center">
+      <h1 class="pb-20 animate-bounce">
+        <span class="bdayMsg">
           Happy Birthday, Chloe!
         </span>
       </h1>
@@ -22,8 +22,12 @@
           </div>
         </div>
       </div>
-      <div class="pt-20 h-[2.5em] max-md:h-[1.75em] max-md:w-60 max-md:ml-auto max-md:mr-auto">
+      <div class="wordFlicker">
         <app-word-flicker></app-word-flicker>
+      </div>
+      <div class="homeBtn" (click)="goHome()">
+        🏠
+        <span class="tooltip">Go back</span>
       </div>
     </div>
     <div #confettiWrapper></div>
