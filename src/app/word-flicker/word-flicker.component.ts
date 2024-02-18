@@ -7,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WordFlickerComponent implements OnInit {
   words = [
-    'Hi i like HTML',
-    'I also like css',
-    'Lorem ipsum dolor sit amet',
-    ' consectetur adipiscing elit',
-    'sed do eiusmod tempor incididunt'
+    'Do you feel old yet?',
+    'Jk, Happy Birthday, Chloeee!',
+    'I hope na ma-enjoy mo araw mo!',
+    'I wish you all the best!',
+    'Magpakabait ka na, ha?',
+    'Libre naman dyan 😆',
+    'Jk, stay safe and healthy!',
+    'Enjoyin mo lang tong gift ko!',
+    'Took me one afternoon to make this 😁',
+    'Pindot ka or swipe para may confetti!',
+    'See you sa PBB house natin 😆'
+
   ];
   part = '';
   i = 0;
