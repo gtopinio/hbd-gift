@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WordFlickerComponent implements OnInit {
   words = [
-    'Do you feel old yet?',
+    'Tanda mo na po XD',
     'Jk, Happy Birthday, Chloeee!',
     'I hope na ma-enjoy mo araw mo!',
     'I wish you all the best!',
     'Magpakabait ka na, ha?',
     'Libre naman dyan 😆',
     'Jk, stay safe and healthy!',
+    'Ingat ka po lagi sa work!',
     'See you sa PBB house natin 😆'
 
   ];
