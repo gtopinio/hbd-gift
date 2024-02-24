@@ -47,7 +47,7 @@ export class HbdComponent implements AfterViewInit, OnInit, OnDestroy {
     this.showFireworks();
     this.fireworksInterval = setInterval(() => {
       this.showFireworks();
-    }, 4000);
+    }, 5000);
   }
 
   ngOnDestroy() {
